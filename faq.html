@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+}
+
+/* 🔙 GLOWING BACK BUTTON */
+.back-btn{
+  position:fixed;
+  top:20px;
+  left:20px;
+  padding:12px 22px;
+  font-size:16px;
+  font-weight:600;
+  color:#fff;
+  background:rgba(0,0,0,0.4);
+  border:2px solid #00f7ff;
+  border-radius:40px;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 15px rgba(0,247,255,0.6);
+  transition:all 0.3s ease;
+  z-index:1000;
+}
+
+.back-btn:hover{
+  background:#00f7ff;
+  color:#000;
+  transform:translateX(-6px);
+  box-shadow:
+    0 0 10px #00f7ff,
+    0 0 30px #00f7ff,
+    0 0 60px #00f7ff;
+}
+
+/* FAQ SECTION */
+.faq-container{
+  max-width:800px;
+  margin:100px auto 60px;
+  padding:20px;
+}
+
+.faq-container h1{
+  text-align:center;
+  margin-bottom:30px;
+  font-size:36px;
+}
+
+.faq{
+  background: rgba(255,255,255,0.08);
+  border-radius:12px;
+  margin-bottom:15px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+.faq-question{
+  padding:18px 20px;
+  cursor:pointer;
+  font-size:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.faq-question:hover{
+  background: rgba(255,255,255,0.12);
+}
+
+.faq-question span{
+  font-size:22px;
+  transition:transform 0.3s ease;
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease;
+  padding:0 20px;
+}
+
+.faq-answer p{
+  padding:15px 0;
+  font-size:15px;
+  color:#e0e0e0;
+}
+
+.faq.active .faq-answer{
+  max-height:250px;
+}
+
+.faq.active .faq-question span{
+  transform:rotate(180deg);
+}
+
+/* 📞 CONTACT CTA BOX */
+.contact-box{
+  max-width:900px;
+  margin:60px auto;
+  background:linear-gradient(135deg,#ff6a00,#ff8c00);
+  border-radius:25px;
+  padding:50px 30px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+.contact-box h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.contact-box p{
+  font-size:16px;
+  margin-bottom:30px;
+  color:#fff;
+}
+
+.contact-btn{
+  padding:14px 32px;
+  font-size:16px;
+  font-weight:600;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  background:#fff;
+  color:#ff6a00;
+  transition:all 0.3s ease;
+}
+
+.contact-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.25);
+}
+
+.contact-btn{
+  display:inline-block;
+  text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<div class="faq-container">
+  <h1>Frequently Asked Questions</h1>
+
+  <div class="faq">
+    <div class="faq-question">
+      What is the Battery Warranty for electric Scooter?
+      <span>▼</span>
+    </div>
+    <div class="faq-answer">
+      <p>Each electric scooter company comes with different battery warranties. Currently, Benling electric scooters offer up to 3 years warranty on Lithium-Ion batteries and 1 year on VRLA batteries.</p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="faq-question">
+      Can Electric Scooter be charged at home?
+      <span>▼</span>
+    </div>
+    <div class="faq-answer">
+      <p>Yes, charging an electric scooter is as easy as charging a mobile phone. It can be charged using a regular 6 Amp socket.</p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="faq-question">
+      Can an electric scooter go uphill?
+      <span>▼</span>
+    </div>
+    <div class="faq-answer">
+      <p>Yes, electric scooters can go uphill. However, climbing consumes more battery, so a higher-capacity battery is recommended for long-distance or hilly travel.</p>
+    </div>
+  </div>
+</div>
+
+<a href="tel:7219367751" class="contact-btn">
+  Contact Support →
+</a>
+
+
+<script>
+function goBack(){
+  window.history.back();
+}
+
+const faqs = document.querySelectorAll(".faq");
+faqs.forEach(faq => {
+  faq.querySelector(".faq-question").addEventListener("click", () => {
+    faq.classList.toggle("active");
+  });
+});
+</script>
+
+</body>
+</html>

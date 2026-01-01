@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vajra EV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: #fff;
+  padding: 15px 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+header h2 {
+  color: #111;
+}
+
+/* ---------- PRODUCT SECTION ---------- */
+.product-section {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+}
+
+/* LEFT SIDE */
+.product-left {
+  width: 65%;
+}
+
+.product-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: #f5b400;
+  margin-bottom: 20px;
+}
+
+.main-image {
+  width: 100%;
+  background: #eee;
+  text-align: center;
+  padding: 20px;
+}
+
+.main-image img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.thumbnails img {
+  width: 100px;
+  height: 70px;
+  object-fit: contain;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.thumbnails img:hover {
+  border-color: #ff2b2b;
+}
+
+/* RIGHT SIDE */
+.product-right {
+  width: 35%;
+  border-left: 1px solid #ddd;
+  padding-left: 30px;
+}
+
+.test-drive-btn {
+  background: #ff2b2b;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.specs {
+  list-style: none;
+}
+
+.specs li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 15px;
+}
+
+.specs span {
+  font-weight: bold;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .product-section {
+    flex-direction: column;
+  }
+
+  .product-left,
+  .product-right {
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  padding: 12px 22px;
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+
+  border: 2px solid #00f7ff;
+  border-radius: 40px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+}
+
+.back-btn:hover {
+  background: #00f7ff;
+  color: #000;
+
+  box-shadow:
+    0 0 10px #00f7ff,
+    0 0 30px #00f7ff,
+    0 0 60px #00f7ff;
+
+  transform: translateX(-6px);
+}
+
+</style>
+</head>
+
+<body>
+
+
+<button class="back-btn" onclick="goBack()">
+  ⬅ Back
+</button>
+
+
+<section class="product-section">
+
+  <!-- LEFT -->
+  <div class="product-left">
+    <div class="product-title">Nandi</div>
+    <div class="stars">★★★★★</div>
+
+    <div class="main-image">
+      <img id="mainImg" src="nandi.webp" alt="Vajra EV">
+    </div>
+
+    <div class="thumbnails">
+      <img src="nandi1.png" onclick="changeImage(this.src)">
+      <img src="nandi2.png" onclick="changeImage(this.src)">
+      <img src="nandi3.png" onclick="changeImage(this.src)">
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="product-right">
+    <button class="test-drive-btn">Nandi Features</button>
+
+    <ul class="specs">
+      <li>Tyre <span>Tubeless</span></li>
+      <li>Motor <span>250 watt</span></li>
+      <li>Speed <span>25 kmph</span></li>
+      <li>Battery Type <span>VRLA / Lithium Ion</span></li>
+      <li>Battery Voltage <span>48v/60V</span></li>
+      <li>Battery Capacity <span>28Ah</span></li>
+      <li>Keyless Entry <span>Yes</span></li>
+      <li>Registration Required <span>No</span></li>
+      <li>License Required <span>No</span></li>
+      <li>Color <span>🟤 ⚪ ⚫ 🔘</span></li>
+      <br/>
+      <br/>
+      <H1>ELECTRIC</H1>
+      <li>Battery Type<span>Lead Acid/Lithium ION</span></li>
+      <li>Battery Voltage<span>48v/60V</span></li>
+      <li>Battry Current<span>28Ah</span></li>
+      <li>Charger<span>3A/5A/6A</span></li> 
+      <li>Driver Type<span>Hub Motor</span></li>
+      <li>Motor Power<span><250W</span></li> 
+       <li>Speed<span><25km/HR</span></li>
+      <li>Controler Type/li><span>Smart</span></li>
+      <li>Motor Type <span>BLDC</span></li>
+      <li>Low Battry Indicator<span></span>✔️</li>
+      <li>Head Light<span>LED</span></li>
+      <li>Tail Light<span>LED</span></li>
+      <li>Failure Indication<span>✔️</span></li>
+      <br>
+      <br>
+      <H1>COMMERCIAL</H1>
+      <li>Charging Time <span>4-5 Hr/ 6-8 Hr</span></li>
+      <li>Estimate Range<span>50-80KM</span></li>
+      <li>Load Carrying Capacity<span>175KG</span></li>
+      <br>
+      <br>
+      <h1>Tyres</h1>
+       <li>Tyre Type<span>Tubeless</span></li>
+        <li>Tyre Size<span>100/10-90</span></li>
+         <li>Wheel Type<span>Alloy</span></li>
+         <br/>
+         <br/>
+         <h1>Suspencion</h1>
+          <li>Front Suspencion<span>Telescopic</span></li>
+           <li>Rear Suspension<span>Spring</span></li>
+           <br/>
+           <br/>
+           <h1>Brakes</h1>
+            <li>Front Brake<span>Drum</span></li>
+             <li>Rear Brake<span>Drum</span></li>
+             <br/>
+             <br/>
+             <h1>Features And Safety</h1>
+              <li>Anthitheft Alarm<span></span>✔️</li>
+               <li>Side Stand Sensor<span></span>✔️</li>
+                <li>Display<span>Dgital</span></li>
+                 <li>Charging At Home <span>Lithium ✔️ <br/> Lead Acid ❌</span></li>
+                  <li>Reverse Drive<span>✔️</span></li>
+                   <li>Electric ABS<span>✔️</span></li>
+                    <li>Regenrative Controller<span>✔️</span></li>
+                     <li>Emergency Switch<span>✔️</span></li>
+                     <br/>
+                     <br/>
+                     <h1>Dimesnations</h1>
+                      <li>Length<span>1880 MM</span></li>
+                       <li>Width<span>700 MM</span></li>
+                        <li>Hight<span>1120 MM</span></li>
+                         <li>Ground Clearance<span>172MM</span></li>
+                          <li>Kerb Weight<span>60kg</span></li>
+                           <li>Under Seat Storage<span>11 LTS</span></li>
+       </ul>
+  </div>
+
+</section>
+
+<script>
+function changeImage(src) {
+  document.getElementById("mainImg").src = src;
+}
+</script>
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
+
+</body>
+</html>
